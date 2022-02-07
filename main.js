@@ -1,9 +1,11 @@
 let books = [
   {
+    id: '001',
     title: 'The Tiral',
     author: 'Franz Kafka',
   },
   {
+    id: '002',
     title: 'Harry Potter',
     author: 'J. K. Rowling',
   },
@@ -18,7 +20,7 @@ function addToLocalStorage(data) {
 // Remove book from the list
 
 function removeBook(ref) {
-  const result = books.filter((value) => value.title !== ref);
+  const result = books.filter((value) => value.id !== ref);
   books = result;
   addToLocalStorage(books);
 }
@@ -29,7 +31,7 @@ let removeBtn = document.querySelectorAll('.remove');
 function addEvents() {
   removeBtn.forEach((element) => {
     element.addEventListener('click', (e) => {
-      const ref = e.target.parentElement.firstElementChild.innerText;
+      const ref = e.target.id;
       removeBook(ref);
       e.target.parentElement.remove();
     });
@@ -53,6 +55,7 @@ function populateDom(list) {
     const btn = document.createElement('button');
     btn.className = 'remove';
     btn.innerHTML = 'Remove';
+    btn.id = list[i].id;
     div.appendChild(btn);
     const hr = document.createElement('hr');
     div.appendChild(hr);
@@ -69,6 +72,7 @@ function addBook() {
   const bookAuthor = document.querySelector('#author').value;
   if (bookTitle && bookAuthor) {
     const book = {
+      id: Date.now().toString(),
       title: bookTitle,
       author: bookAuthor,
     };
