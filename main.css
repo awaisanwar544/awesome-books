@@ -1,3 +1,68 @@
 body {
   background-color: #fff;
 }
+body {
+  background-color: rgb(255, 243, 211);
+  text-align: center;
+}
+
+#books-list {
+  margin: 1em 20%;
+}
+
+#books-list > div:nth-child(odd) {
+  background-color: rgb(255, 204, 65);
+}
+
+#books-list > div:nth-child(even) {
+  background-color: rgb(255, 223, 133);
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.remove {
+  padding: 1em;
+  background-color: rgb(180, 0, 0);
+  border: none;
+  border-radius: 0.5em;
+  color: #fff;
+}
+
+p {
+  background: none;
+}
+
+h1,
+h2,
+p {
+  color: rgb(77, 77, 77);
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 40%;
+  margin: 1em 30%;
+  flex-wrap: wrap;
+}
+
+form > input {
+  width: 100%;
+  margin: 0.5em;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.75em;
+}
+
+#add-btn {
+  width: 20%;
+  background-color: rgb(1, 145, 1);
+  color: #fff;
+  margin-left: auto;
+}
