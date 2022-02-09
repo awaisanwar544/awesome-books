@@ -36,11 +36,11 @@ a {
 }
 
 a:hover {
-  color:rgb(170, 125, 0);
+  color: rgb(170, 125, 0);
 }
 
 .active {
-  color:rgb(170, 125, 0);
+  color: rgb(170, 125, 0);
 }
 
 .date {
