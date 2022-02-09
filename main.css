@@ -1,10 +1,61 @@
 body {
   background-color: rgb(255, 243, 211);
   text-align: center;
+  padding: 0 20%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  padding: 0.5em;
+  box-shadow: 1px 1px 0.25em rgb(187, 137, 0);
+  border-radius: 1em;
+}
+
+header > ul {
+  margin-left: auto;
+  display: flex;
+  max-width: 60%;
+  min-width: 30%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header > ul > li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(77, 77, 77);
+  margin-left: 1em;
+}
+
+a:hover {
+  color: rgb(170, 125, 0);
+}
+
+.active {
+  color: rgb(170, 125, 0);
+}
+
+.date {
+  align-self: flex-end;
+  margin-right: 1em;
+}
+
+#books {
+  flex-direction: column;
 }
 
 #books-list {
-  margin: 1em 20%;
+  margin: 1em 10%;
+  min-height: 60vh;
+  box-shadow: 1px 1px 10px rgb(255, 204, 65);
 }
 
 #books-list > div:nth-child(odd) {
@@ -39,12 +90,16 @@ p {
   color: rgb(77, 77, 77);
 }
 
+#form {
+  flex-direction: column;
+}
+
 form {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 40%;
-  margin: 1em 30%;
+  max-width: 60%;
+  margin: 1em auto;
   flex-wrap: wrap;
 }
 
@@ -62,4 +117,32 @@ form > input {
   background-color: rgb(1, 145, 1);
   color: #fff;
   margin-left: auto;
+}
+
+#contact {
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 1em;
+  justify-content: center;
+}
+
+small {
+  font-size: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
 }

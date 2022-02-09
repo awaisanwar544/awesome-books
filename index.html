@@ -9,11 +9,20 @@
   </head>
   <body>
     <header>
-      <h1>All Awesome Books</h1>
+      <h1>Awesome Books</h1>
+      <ul>
+        <li><a id="list-link" href="#books" class="active">List</a></li>
+        <li><a href="#form">Add New</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </header>
     <main>
-      <section id="books-list"></section>
-      <section id="form">
+      <p class="date"></p>
+      <section id="books" class="show">
+        <h2>All Awesome Books</h2>
+        <div id="books-list"></div>
+      </section>
+      <section id="form" class="hidden">
         <h2>Add a new book</h2>
         <form action="#">
           <input type="text" id="title" placeholder="Title" />
@@ -21,7 +30,24 @@
           <input id="add-btn" type="button" value="Add" />
         </form>
       </section>
+      <section id="contact" class="hidden">
+        <h2>Contact Information</h2>
+        <p>
+          Do you have any questions or you just want to say "Hello"? <br />
+          You can reach out to us.
+        </p>
+        <ul>
+          <li>Our e-mail: awaisanwar5544@gmail.com</li>
+          <li>Our Phone Number: +923215908781</li>
+          <li>Our Address: XYZ - Street, Jada Jhelum, Punjab Pakistan</li>
+        </ul>
+      </section>
     </main>
+    <footer>
+      <small
+        >&copy; Copyright 2022, Awais Anwar & Chukwuebuka Victor Ozoede</small
+      >
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

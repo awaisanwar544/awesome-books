@@ -57,7 +57,7 @@ function populateDom(list) {
     const div = document.createElement('div');
     div.className = 'book';
     const pTitle = document.createElement('p');
-    pTitle.innerHTML = `"${list[i].title}" by ${list[i].author}`;
+    pTitle.innerHTML = `'${list[i].title}' by ${list[i].author}`;
     div.appendChild(pTitle);
     const btn = document.createElement('button');
     btn.className = 'remove';
@@ -70,6 +70,14 @@ function populateDom(list) {
   addEvents();
 }
 
+function nav(element, link) {
+  document.querySelector('.show').className = 'hidden';
+  document.querySelector(element).className = 'show';
+  document.querySelectorAll('a').forEach((item) => {
+    item.className = '';
+  });
+  link.className = 'active';
+}
 // get input from form and call addToBooks method
 
 function addNewBook() {
@@ -80,10 +88,37 @@ function addNewBook() {
     Book.addToBooks(newBook);
     populateDom([newBook]);
     document.querySelector('form').reset();
+    const listLink = document.querySelector('#list-link');
+    nav('#books', listLink);
   }
 }
 
 addBtn.addEventListener('click', addNewBook);
+
+document.querySelectorAll('a').forEach((item) => {
+  const ref = item.getAttribute('href');
+  item.addEventListener('click', () => {
+    nav(ref, item);
+  });
+});
+
+const dateTime = () => {
+  const time = document.querySelector('.date');
+  const now = new Date();
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  };
+  const locale = navigator.en;
+  time.innerHTML = new Intl.DateTimeFormat(locale, options).format(now);
+
+  setTimeout(dateTime, 1000);
+};
+dateTime();
 
 window.onload = () => {
   if (localStorage.getItem('data') === null) {
