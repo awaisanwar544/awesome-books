@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Awais Anwar**
+👤 **Chukwuebuka Victor Ozoede**
 
 - GitHub: [@githubhandle](https://github.com/awaisanwar544)
 - Twitter: [@twitterhandle](https://twitter.com/AwaisAnwar47)
